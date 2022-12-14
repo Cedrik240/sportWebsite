@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Login from './components/Login/Login';
+import WorkerPanel from './components/WorkerPanel/WorkerPanel';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+<Router>
+  <Routes>
+    <Route path="/" element={<Login />} />
+    <Route path='/worker-panel' element={<WorkerPanel/>}>
+      <Route path="rent" element={<h1>Wypożycz</h1>} />
+      <Route path="return" element={<h1>Zwróć</h1>} />
+      <Route path="service" element={<h1>Service</h1>} />
+      <Route path="sale" element={<h1>Sale</h1>} />
+      <Route path="daily-report" element={<h1>Daily report</h1>} />
+    </Route>
+  </Routes>
+</Router>
+  </>
+  )
 }
 
 export default App;
