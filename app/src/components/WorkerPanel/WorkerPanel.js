@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu, Button, theme } from 'antd';
 
 const { Header, Sider, Content } = Layout;
 
 export const WorkerPanel = () => {
+    const navigate = useNavigate();
+
     const [collapsed, setCollapsed] = useState(false);
     const {
       token: { colorBgContainer },
@@ -57,11 +59,12 @@ export const WorkerPanel = () => {
             />
           </Sider>
           <Layout className="site-layout">
-            <Header style={{ padding: 0, background: colorBgContainer }}>
+            <Header style={{ padding: 0, background: colorBgContainer, width:'100%' }}>
               {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                 className: 'trigger',
                 onClick: () => setCollapsed(!collapsed),
               })}
+              <Button className='logout' style={{display:'block', marginLeft:'auto', marginRight:'30px', top:'-50px'}} type='primary' onClick={() => navigate('/')}>Logout</Button>
             </Header>
             <Content
               style={{

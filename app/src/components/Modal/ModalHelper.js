@@ -18,9 +18,9 @@ const ModalHelper = () => {
   return (
     <>
     <Button type="primary" onClick={showModal}>
-      Open Modal
+      Pomoc
     </Button>
-    <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+    <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
       <p>Proszę skontaktować się pod adres</p>
       <p>przykładowyadres@gmail.com</p>
     </Modal>

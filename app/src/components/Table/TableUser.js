@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Divider } from 'antd';
 import ModalHelper from '../Modal/ModalHelper';
-import {ActionItem, ActionContainer} from './styled';
+import {ActionItem, ActionContainer, ButtonContainer} from './styled';
 
 //Dane są zakodowane na twardo, tutaj należy dynamicznie połączyć to z backendem
 //Zalecam również zastosowanie TypeScript lub DefaultProps do typowania - teraz na to nie ma czasu na wszystkie pliki
@@ -79,7 +79,9 @@ const TableUser = ({title}) => {
     </ActionContainer>
     <Divider>{title}</Divider>
     <Table columns={columns} dataSource={data} size="middle" />
-    <ModalHelper/>
+    <ButtonContainer>
+      <ModalHelper/>
+    </ButtonContainer>
   </>
 
   )

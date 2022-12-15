@@ -10,16 +10,25 @@ export const LoginWrapper = styled.div `
 `
 
 export const ButtonLogin = styled(Button)`
+    position: absolute;
     width: 100%;
 `
 
 export const Image = styled.img`
     position: absolute;
-    left: -80% ;
+    left: -90% ;
     width: 90%;
+    @media(width < 600px) {
+        display: none;
+    }
 `
+
+export const AlertMessage = styled.div `
+    position: absolute;
+`
+
 export const Logo = styled.img`
     position: absolute;
-    top: -70%;
+    top: -80%;
     width: 80%;
     `

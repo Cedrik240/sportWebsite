@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    gap: 10px;
+`
+
 export const ActionContainer = styled.div `
     display: flex;
     justify-content: right;
