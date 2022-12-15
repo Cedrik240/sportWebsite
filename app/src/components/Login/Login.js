@@ -1,20 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Checkbox, Form, Input, Alert } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import sport from '../..//components/assets/images/sport.gif';
 import logo from '../../components/assets/images/logo.jpg';
 import { LoginWrapper, ButtonLogin, Image, AlertMessage, Logo } from './styled';
+import { UserLoginContext } from '../LoginContext/LoginContext';
 
 const Login = () => {
     const navigate = useNavigate();
-
+    const context = useContext(UserLoginContext);
+    const {isAuthenticated, isAdmin} = context;
     const [data, setData] = useState(false);
 
     const onFinish = (values) => {
         if (values.username === 'user' && values.password === 'test') {
+            isAuthenticated(true)
+            isAdmin(false)
             navigate("/worker-panel/rental");
-          } else {
+          } 
+          else if(values.username === 'admin' && values.password === 'admin') {
+            isAuthenticated(true);
+            isAdmin(true)
+            navigate("/worker-panel-admin/rental");
+          }
+          else {
+           navigate('/')
            setData(true);
           }
       };

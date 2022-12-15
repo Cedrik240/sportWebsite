@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Divider } from 'antd';
+import { Table, Divider, Button } from 'antd';
 import ModalHelper from '../Modal/ModalHelper';
 import {ActionItem, ActionContainer, ButtonContainer} from './styled';
 
@@ -74,8 +74,8 @@ const TableUser = ({title}) => {
   return (
   <>
     <ActionContainer>
-      <ActionItem>Szukaj</ActionItem>
-      <ActionItem>Drukuj</ActionItem>
+      <Button>Szukaj</Button>
+      <Button>Drukuj</Button>
     </ActionContainer>
     <Divider>{title}</Divider>
     <Table columns={columns} dataSource={data} size="middle" />
