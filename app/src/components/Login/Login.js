@@ -11,7 +11,7 @@ const Login = () => {
 
     const onFinish = (values) => {
         if (values.username === 'user' && values.password === 'test') {
-            navigate("/worker-panel");
+            navigate("/worker-panel/rental");
           } else {
             console.log('Incorrect username or password!');
           }

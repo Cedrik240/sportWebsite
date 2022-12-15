@@ -3,9 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
   UserOutlined,
-  VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
 
@@ -28,7 +26,7 @@ export const WorkerPanel = () => {
                 {
                   key: '1',
                   icon: <UserOutlined />,
-                  label: <Link to="/worker-panel">Wypożyczenia</Link>,
+                  label: <Link to="rental">Wypożyczenia</Link>,
                 },
                 {
                   key: '2',
